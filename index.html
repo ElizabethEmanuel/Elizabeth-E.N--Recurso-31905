@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FarmaCare</title>
+		<link rel="shortcut icon" href="image/logo.png" type="image/x-icon">
+		<link rel="shortcut icon" href="image/logo2.png" type="image/x-icon">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Importação da biblioteca Font Awesome -->
+		<link rel="stylesheet" type="text/css" href="estilos/estiloindex.css">
+		
+
+
+		<style>
+			/* Container de Formulário */
+			.registro {
+    			background-color: #008eaa; 
+			}
+			.form-container {
+				display: none;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: black;
+				color: white;
+				padding: 40px;
+				border-radius: 10px;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+				z-index: 1000;
+				width: 400px; /* Aumenta a largura do formulário */
+			}
+	
+			.form-container.active {
+				display: block;
+			}
+	
+			.form-container h2 {
+				text-align: center;
+				margin-bottom: 20px;
+			}
+	
+			.form-container form div {
+				position: relative;
+				margin-bottom: 15px;
+			}
+	
+			.form-container form div i {
+				position: absolute;
+				top: 50%;
+				left: 10px;
+				transform: translateY(-50%);
+				color: white;
+			}
+	
+			.form-container form input {
+				width: calc(100% - 40px); /* Ajusta a largura para caber dentro do formulário */
+				padding: 10px;
+				padding-left: 35px;
+				border: none;
+				border-radius: 5px;
+				margin-bottom: 10px;
+			}
+	
+			.form-container form button {
+				width: 100%;
+				padding: 10px;
+				background-color: #008eaa /*#28a745;*/
+				border: none;
+				border-radius: 5px;
+				color: white;
+				cursor: pointer;
+				margin-top: 10px;
+			}
+	
+			.form-container .close-btn {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				cursor: pointer;
+				font-size: 20px;
+			}
+	
+			.form-container .social-text, .form-container .register-text {
+				text-align: center;
+				margin: 10px 0;
+			}
+	
+			.form-container .social-media {
+				display: flex;
+				justify-content: center;
+			}
+	
+			.form-container .social-icon {
+				margin: 0 5px;
+				color: white;
+				font-size: 24px; /* Aumenta o tamanho dos ícones sociais */
+				cursor: pointer;
+			}
+		</style>
+		<script src="js/menu.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const loginBtn = document.getElementById('login-btn');
+				const closeBtns = document.querySelectorAll('.close-btn');
+				const signupLink = document.getElementById('signup-link');
+	
+				function toggleForm(formId) {
+					const form = document.getElementById(formId);
+					form.classList.toggle('active');
+				}
+	
+				if (loginBtn) {
+					loginBtn.addEventListener('click', () => {
+						toggleForm('login-form');
+					});
+				}
+	
+				closeBtns.forEach(btn => {
+					btn.addEventListener('click', () => {
+						const formId = btn.closest('.form-container').id;
+						toggleForm(formId);
+					});
+				});
+	
+				if (signupLink) {
+					signupLink.addEventListener('click', (event) => {
+						event.preventDefault();
+						toggleForm('login-form');
+						toggleForm('signup-form');
+					});
+				}
+	
+				$('form#login').submit(function(event) {
+					event.preventDefault();
+					var nome = $('#username').val();
+					var pass = $('#password').val();
+					if (nome === '' || pass === '') {
+						alert('Por favor, preencha todos os campos do formulário');
+						return;
+					}
+					alert('Login Bem-Sucedido!\nUsername: ' + nome);
+					$('#username, #password').val('');
+					toggleForm('login-form');
+				});
+	
+				$('form#signup').submit(function(event) {
+					event.preventDefault();
+					var nome = $('#signup-username').val();
+					alert('Registro Bem-Sucedido!\nNovo Username: ' + nome);
+					$('#signup-username, #signup-email, #signup-password').val('');
+					toggleForm('signup-form');
+				});
+			});
+		</script>
+	
+	<body>
+	
+
+
+
+
+	</head>
+	<body>
+
+		<header>
+            <div class="logo">
+				<img src="image/alogo.png" alt="Logo FarmaCare">
+				<link rel="stylesheet" type="text/css" href="pestilo/estilosaude_bem_estar.css">
+			</div>
+			<nav class="menu">
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="medicamentos.html">Medicamentos</a></li>
+					<li><a href="saude e Bem-estar.html">Saúde e Bem-estar</a></li>
+					<li><a href="higienepessoal.html">Higiene Pessoal</a></li>
+					<li><a href="beleza.html">Beleza</a></li>
+				</ul>
+			</nav>
+			<div class="user-actions">
+				<a id="login-btn"><i class="fas fa-user"></i> Login</a>
+			</div>
+			<div class="social-icons">
+				<a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+				<a href="https://www.facebook.com/sua-pagina-do-facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+				<a href="https://t.me/your_username" target="_blank" class="telegram-icon"><i class="fab fa-telegram"></i></a>
+			</div>
+		</header>
+		<!-- Final Cabeçalho -->
+
+
+
+
+
+
+								
+				<!-- Formulário de Login -->
+				<div class="form-container" id="login-form">
+					<span class="close-btn">&times;</span>
+					<h2>Login</h2>
+					<form id="login">
+						<div>
+							<i class="fas fa-user"></i>
+							<input type="text" id="username" placeholder="Username" required>
+						</div>
+						<div>
+							<i class="fas fa-lock"></i>
+							<input type="password" id="password" placeholder="Password" required>
+						</div>
+						<button type="submit">Login</button>
+						<p class="social-text">Ou faça login com a plataforma social</p>
+						<div class="social-media">
+							<a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+							<a href="https://google.com" target="_blank" class="social-icon"><i class="fab fa-google"></i></a>
+							<a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+							<a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+						</div>
+						<p class="register-text">Não tem conta? <a id="signup-link" href="#">Registre-se</a></p>
+					</form>
+				</div>
+
+				<!-- Formulário de Registro -->
+				<section class="registro">
+					<div class="form-container" id="signup-form">
+						<span class="close-btn">&times;</span>
+						<h2>Registro</h2>
+						<form id="signup">
+							<div>
+								<i class="fas fa-user"></i>
+								<input type="text" id="signup-username" placeholder="Username" required>
+							</div>
+							<div>
+								<i class="fas fa-envelope"></i>
+								<input type="email" id="signup-email" placeholder="Email" required>
+							</div>
+							<div>
+								<i class="fas fa-lock"></i>
+								<input type="password" id="signup-password" placeholder="Password" required>
+							</div>
+							<p class="social-text">Ou faça registro com a plataforma social</p>
+							<div class="social-media">
+								<a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+								<a href="https://google.com" target="_blank" class="social-icon"><i class="fab fa-google"></i></a>
+								<a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+								<a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+							</div>
+							<button type="submit">Registre-se</button>
+						</form>
+					</div>
+				</section>
+
+				<main>
+					<!--div class="carrossel">
+						<div class="images">
+							<img src="image/banner1.png" class="active">
+							<img src="image/banner2.png">
+							<img src="image/banner3.png">
+	
+						</div-->
+						<div class="navegacao">
+							<div class="navegacao-dots">
+								<span class="dot active" data-slide="1"></span>
+								<span class="dot" data-slide="2"></span>
+								<span class="dot" data-slide="3"></span>
+								<span class="dot" data-slide="4"></span>
+							</div>
+						</div>
+					</div>
+				</main>
+
+				<script>
+					const images = document.querySelectorAll('.images img');
+					const dots = document.querySelectorAll('.dot');
+					let currentIndex = 0;
+
+					function showSlide(index) {
+						images.forEach((img, i) => {
+							img.classList.toggle('active', i === index);
+						});
+						dots.forEach((dot, i) => {
+							dot.classList.toggle('active', i === index);
+						});
+					}
+
+					function nextSlide() {
+						currentIndex = (currentIndex + 1) % images.length;
+						showSlide(currentIndex);
+					}
+
+					dots.forEach((dot, index) => {
+						dot.addEventListener('click', () => {
+							currentIndex = index;
+							showSlide(index);
+						});
+					});
+
+					setInterval(nextSlide, 3000);
+				</script>
+
+
+
+			
+
+
+
+        </header>
+        <!-- final abecalho-->
+
+	        
+	    <main>
+
+	    	<div class="intro">
+				<div class="banner">
+					<div class="images">
+						<img src="image/slide1.jpg" class="active" alt="pic1">
+						<img src="image/princi.png" alt="pic2">
+						<img src="image/slide5.jpg" alt="pic3">
+						<img src="image/slide9.webp" alt="pic4">
+						<!-- Clone dos primeiros slides -->
+						<img src="image/slide1.jpg" alt="pic1">
+						<img src="image/princi.png" alt="pic2">
+					</div>
+					<div class="dots">
+						<span class="dot active" data-slide="0"></span>
+						<span class="dot" data-slide="1"></span>
+						<span class="dot" data-slide="2"></span>
+						<span class="dot" data-slide="3"></span>
+					</div>
+				</div>
+				<div class="intro">
+	                <div class="intro-content">
+	                    <div class="intro-text">
+	                        <h1>FarmaCare</h1>
+	                        <p>
+	                            A FarmaCare é uma rede de farmácias, que tem como missão disponibilizar aos seus clientes produtos e serviços farmacêuticos de qualidade, a preços competitivos, contribuindo para a saúde, bem-estar e qualidade de vida da população.
+	                        </p>
+	                        <p>
+	                            Criada em Angola em 2022, comercializa produtos de origem controlada, fruto das mais modernas soluções para os cuidados de saúde. Tem uma oferta completa ao nível de produtos farmacêuticos, higiene & beleza e alimentação saudável.
+	                        </p>
+	                        <p>
+	                            Estamos aqui para ajudá-lo a viver uma vida feliz. Conte conosco para todas as suas necessidades de saúde e bem-estar.
+	                        </p>
+		                    </div>
+		                    <div class="intro-image">
+		                        <img src="image/slide4.jpg" alt="imagrm de farmaceltica">
+		                    </div>
+	                	</div>
+	    		 </div>
+    		 </div>
+				<!--
+	    		<h1>FarmaCare</h1>
+	    		_______
+                <p>
+                    A FarmaCare é uma rede de farmácias, que tem como missão disponibilizar aos seus clientes produtos e serviços farmacêuticos de qualidade, a preços competitivos, contribuindo para a saúde, bem-estar e qualidade de vida da população.
+                </p>
+                <p>
+                    Criada em Angola em 2022, comercializa produtos de origem controlada, fruto das mais modernas soluções para os cuidados de saúde. Tem uma oferta completa ao nível de produtos farmacêuticos, higiene & beleza e alimentação saudável.
+                </p>
+                <p>
+                    Estamos aqui para ajudá-lo a viver uma vida feliz. Conte conosco para todas as suas necessidades de saúde e bem-estar.
+                </p>  -->
+	    	</div>
+
+	    	<div id="boxl">
+	  			<h1 style="text-align: center;">Produtos</h1>
+	  			<div id="produtos">
+	  					<div class="item">
+	  						<div id="foto">
+	  							<img width="100%" height="100%" src="image/menuimg3.jpg">
+	  						</div>
+	  						<section>
+	  							<h1>MEDICAMENTOS</h1>
+	  							<p>Oferecemos uma vasta gama de medicamentos sujeitos e não sujeitos a receita médica para alívio e tratamento dos seus problemas de saúde ligeiros como: dor e febre | gripes | tosse | dores de garganta | alergias | diarreia | entre outros…
+	  							</p>
+	  							
+	  						</section>
+	  					</div>
+	  					<div class="item">
+	  						<div id="foto">
+	  							<img width="100%" height="100%" src="image/menuimg2.jpg">
+	  						</div>
+	  						<section>
+	  							<h1>MAMÃ E BEBÉ</h1>
+	  							<p>A Mamã poderá usufruir de artigos de saúde e bem-estar e de aconselhamento direccionado à sua condição. Temos para o seu bebé as melhores marcas de alimentação infantil, puericultura e higiene do bebé.
+	  							</p>
+	  						</section>
+	  					</div>
+	  					<div class="item">
+	  						<div id="foto">
+	  							<img width="100%" height="100%" src="image/menuimg4.jpg">
+	  						</div>
+	  						<section>
+	  							<h1>DERMOCOSMÉTICA</h1>
+	  							<p>Uma vasta escolha, com compostos adaptados às diferentes idades e tipos de pele. Para além deste objectivo, têm duas vertentes muito especializadas: protecção solar e produtos de anti-envelhecimento.
+	  							</p>
+	  						</section>
+	  					</div>
+	  			</div>
+	    	</div><br><br><br>
+	    		
+	    	<div id="conteudo">
+	    		<h1>Servicos</h1>
+	    		<div id="servicos">
+		    		<div class="prestamos">
+		    			<div id="imagem">
+		    				<img width="100%" height="100%" src="image/banner1.jpg">
+		    			</div>
+		    			<section>
+		    				<h1 style="color: #fff;">PRESSAO ARTERIAL</h1>
+		    			</section>
+		    		</div>
+
+		    		<div class="prestamos">
+		    			<div id="imagem">
+		    				<img width="100%" height="100%" src="image/banner2.jpg">
+		    			</div>
+		    			<section>
+		    				<h1 style="color: #fff;">GLICEMIA</h1>
+		    			</section>
+		    		</div>
+
+		    		<div class="prestamos">
+		    			<div id="imagem">
+		    				<img width="100%" height="100%" src="image/banner3.jpg">
+		    			</div>
+		    			<section>
+		    				<h1 style="color: #fff;">ÍNDICE DE MASSA CORPORAL</h1>
+		    			</section>
+		    		</div>
+
+		    		<div  class="prestamos">
+		    			<div id="imagem">
+		    				<img width="100%" height="100%" src="image/banner4.png">
+		    			</div>
+		    			<section>
+		    				<h1 style="color: #fff;">PESAGEM</h1>
+		    			</section>
+		    		</div>
+
+		    		<div class="prestamos">
+		    			<div id="imagem">
+		    				<img width="100%" height="100%" src="image/banner5.png">
+		    			</div>
+		    			<section>
+		    				<h1 style="color: #fff;">PESAGEM BEBÉ</h1>
+		    			</section>
+		    		</div>
+
+		    		<div class="prestamos">
+		    			<div id="imagem">
+		    				<img width="100%" height="100%" src="image/banner6.png">
+		    			</div>
+		    			<section>
+		    				<h1 style="color: #fff;">SERVIÇO DE RESERVA 24H</h1>
+		    			</section>
+		    		</div>
+		    	</div>
+
+	    		</div>
+	    	</div><br><br><br>
+
+	    	
+
+	    </main>
+
+	    <div class="atencao">
+
+	    	<h3>
+	    		De acordo com a legislação Angolana, não é permitido a publicação de medicamentos e derivados online. Entretanto, com intuito informativo, encontrará aqui categorias de medicamentos disponíveis nas nossas farmácias. <a href="stock.html">>></a>
+	    	</h3>
+	    	
+	    </div>
+
+
+
+
+
+
+        <!-- rodape-->
+	    <footer>
+	        <!--  rodapé  -->
+	        <div class="footer-links">
+	            <div class="footer-column">
+	                <h3>FC</h3>
+	                <ul>
+	                    <li><a href="rodape.html">Sobre nós</a></li>
+	                    <li><a href="rodape.html">FAQ</a></li>
+	                    <li><a href="rodape.html">Política de Privacidade</a></li>
+	                </ul>
+	            </div>
+	            <div class="footer-column">
+	                <h3>APRENDA</h3>
+	                <ul>
+	                    <li><a href="saude e bem-estar.html">Espaço Saúde</a></li>
+	                    <li><a href="saude e bem-estar.html">Nutrição</a></li>
+	                </ul>
+	            </div>
+	            <div class="footer-column">
+	                <h3>Redes sociais</h3>
+	                <ul>
+	                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+	                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+	                    <li><a href="#"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
+	                </ul>
+	            </div>
+	            <div class="footer-column">
+	                <h3>Informações de contato</h3>
+	                <ul>
+	                    <li>+244 924 999 777</li>
+	                    <li>geral@farmacare.co.ao</li>
+	                    <li>Av. De Pedro C. Van-Dúnem “Loy” Morro Bento. LUANDA</li>
+	                </ul>
+	            </div>
+	        </div>
+	    </footer>
+
+	    <script>
+		     // Define the intervalo de troca para 1 segundo (1000 ms)
+		    const intervaloDeTroca = 1000;
+
+		    // Função para iniciar o carrossel
+		    function iniciarCarrossel() {
+		        let indiceAtual = 0;
+		        const imagens = document.querySelectorAll('.carousel img');
+		        const totalImagens = imagens.length;
+
+		        function mostrarProximaImagem() {
+		            imagens[indiceAtual].classList.remove('active');
+		            indiceAtual = (indiceAtual + 1) % totalImagens;
+		            imagens[indiceAtual].classList.add('active');
+		        }
+
+		        setInterval(mostrarProximaImagem, intervaloDeTroca);
+		    }
+
+		    // Chama a função para iniciar o carrossel
+		    iniciarCarrossel();
+
+	    </script>
+		
+
+	</body>
+</html>

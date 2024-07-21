@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="pt.webp" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/login.js" defer></script>
+</head>
+
+<style>
+    
+    body{
+    background-color: #4cdce9;
+    font-family: 'Times New Roman', Times, serif;
+   }
+
+.blur-bg-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+}
+.form-popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 720px;
+    width: 100%;
+    background: white;
+    border: 2px solid white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.445);
+    transform: translate(-50%, -50%);
+}
+
+.form-popup .form-box{
+    display: flex;
+}
+
+.form-box .form-details{
+    max-width: 330px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    padding: 0 20px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .form-details{
+    background: url("Default_A_warm_and_inviting_scene_of_a_group_of_friends_engage_3.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.signup .form-details{
+    background: url("pexels-pixabay-372326.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.form-box h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-box .form-content{
+    width: 100%;
+    padding: 35px;
+}
+
+form .input-field{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+form .input-field input{
+    width:100%;
+    height: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid #717171;
+}
+
+.input-field input:focus{
+    border-color: #00bcd4;
+}
+
+.input-field input:is(:focus, :valid){
+    padding: 16px 15px 0;
+}
+
+form .input-field label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    color: #717171;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ label{
+    color: #00bcd4;
+    font-size: 0.75rem;
+    transform: translateY(-120%);
+}
+
+.form-box a{
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.form-box a:hover{
+    text-decoration: underline;
+}
+
+.form-box :where(.forgot-pass, .policy-text){
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95rem;
+}
+
+form button{
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: #fff;
+    cursor:pointer;
+    background: #00bcd4;
+    transition: 0.2 ease;
+}
+
+form button:hover{
+    background: #0097a7;
+}
+
+.form-box .bottom-link{
+    text-align: center;
+}
+
+.form-popup .signup, 
+.form-popup.show-signup .login{
+    display: none;
+}
+
+.form-popup.show-signup .signup{
+    display: flex ;
+}
+
+.signup .policy-text{
+    display: flex;
+    align-items: center;
+}
+
+.signup .policy-text input{
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+@media (max-width:760px) {
+    .form-popup{
+        width: 95%;
+    }
+
+    .form-box .form-details{
+        display: none;
+    }
+
+    .form-box .form-content{
+        padding: 30px 20px;
+    }
+}
+
+</style>
+
+<body>
+    <main>
+        <section>
+            <div class="blur-bg-overlay"></div>
+            <div class="form-popup show-signup">
+                <div class="form-box login">
+                    <div class="form-details">
+                        <h2>BEM-VINDO - (A)</h2>
+                        <p>Seja bem-vindo(a) novamente. Faça login para acessar sua conta e poder fazer as configurações no seu ambiente</p>
+                    </div>
+                    <div class="form-content">
+                        <h2>INICIAR SESSÃO</h2>
+                        <form id="login-form">
+                            <div class="input-field">
+                                <input type="text" id="login-email" required>
+                                <label>Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="login-password" required>
+                                <label>Palavra-Passe</label>
+                            </div>
+                            <a href="#" class="forgot-pass">Esqueceu a palavra-passe?</a>
+                            <button type="submit">Iniciar sessão <a href="index.html"></a> </button>
+                        </form>
+                        <div class="bottom-link">
+                            Não tem uma conta?
+                            <a href="#" id="signup-link">Registar-me</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-box signup">
+                    <div class="form-details">
+                        <h2>Criar Conta</h2>
+                        <p>Para se tornar parte da comunidade, assine usando informações pessoais...</p>
+                    </div>
+                    <div class="form-content">
+                        <h2>Registar-me</h2>
+                        <form id="signup-form">
+                            <div class="input-field">
+                                <input type="text" id="signup-email" required>
+                                <label>Introduza o seu email</label>
+                            </div>
+                            
+                            <div class="input-field">
+                                <input type="password" id="signup-password" required>
+                                <label>Criar palavra-passe</label>
+                            </div>
+                            <div class="policy-text">
+                                <input type="checkbox" id="policy">
+                                <label for="policy">
+                                    Concordo com os
+                                    <a href="#"> Termos e Condições</a>
+                                </label>
+                            </div>
+                            <button type="submit">Registar-me</button>
+                        </form>
+                        <div class="bottom-link">
+                            Já tem uma conta?
+                            <a href="index.html" id="login-link">Iniciar sessão</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const loginSignupLink = document.querySelectorAll(".form-box .bottom-link a");
+        const formPopup = document.querySelector(".form-popup");
+
+        loginSignupLink.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                formPopup.classList[link.id === "signup-link" ? 'add' : 'remove']("show-signup");
+            });
+        });
+
+        // Handler para o login
+        $("#login-form").submit(function(e) {
+            e.preventDefault();
+
+            const email = $("#login-email").val();
+            const password = $("#login-password").val();
+
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/users', // URL da API simulada
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    const user = response.find(user => user.email === email);
+                    if (user) {
+                        alert('Login bem-sucedido!');
+                        
+
+                        // Redirecionar ou executar outras ações de sucesso
+                    } else {
+                        alert('Credenciais inválidas.');
+                        
+                    }
+                },
+                error: function() {
+                    alert('Erro ao tentar fazer login. Por favor, tente novamente mais tarde.');
+                }
+            });
+        });
+
+        // Handler para o signup
+        $("#signup-form").submit(function(e) {
+            e.preventDefault();
+
+            const email = $("#signup-email").val();
+            const password = $("#signup-password").val();
+
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/users', // URL da API simulada
+                type: 'POST',
+                dataType: 'json',
+                data: JSON.stringify({ email: email, password: password }),
+                contentType: 'application/json; charset=UTF-8',
+                success: function(response) {
+                    alert('Registro bem-sucedido!');
+                    // Redirecionar ou executar outras ações de sucesso
+                },
+                error: function() {
+                    alert('Erro ao tentar registrar. Por favor, tente novamente mais tarde.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
