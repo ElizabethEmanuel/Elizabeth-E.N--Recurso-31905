@@ -1,0 +1,366 @@
+body {
+    font-family: Arial, #747474;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+/*incicio do cabecalho*/
+header {
+    background-color:  #008eaa;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 90px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.user-actions a,
+.social-icons a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+
+.social-icons a {
+    margin-left: 10px;
+}
+.drug{
+    height: 100%;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu ul li {
+    margin-right: 20px;
+}
+
+.menu ul li:last-child {
+    margin-right: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px;
+}
+
+.user-actions a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+about-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.about-content h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    color: blanchedalmond;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-left: 20px; /* Espaçamento entre a imagem e o texto */
+}
+
+.drug {
+    width: 45%;
+    height: auto;
+}
+
+.bem-estar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bem-estar .compri {
+    width: 45%; /
+    height: auto;
+    margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+}
+
+.bem-estar .texto {
+    max-width: 600px;
+}
+
+.bem-estar .texto h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+.bem-estar .texto h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.bem-estar .texto p {
+    font-size: 18px;
+    color: blanchedalmond;
+}
+
+/* fim cabecalho*/
+
+
+
+
+
+.container {
+    position: relative;
+    width: 100%; 
+}
+
+.container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Cor do texto */
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Estilo para a div .atencao */
+.atencao {
+    background-color: #ffcccc; /* Cor de fundo vermelha */
+    border: 1px solid #ff0000; /* Borda vermelha */
+    padding: 2Opx; /* Espaçamento interno */
+    text-align: center; /* Centralizar o texto */
+    margin-top: 10px; /* Espaço superior */
+}
+
+/* Estilo para o texto dentro de .atencao */
+.atencao h3 {
+    color: #ff0000; /* Cor do texto vermelha */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+
+
+
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Distribui o conteúdo em três colunas iguais */
+    
+}
+
+.categoria {
+    border: 0px solid #ccc; /* Adiciona uma borda para separar visualmente as categorias */
+    padding: 10px; 
+}
+
+.categoria p {
+    font-weight: bold; 
+}
+
+.categoria ul {
+    margin: 0; /* Remove o espaçamento padrão da lista */
+    padding: 0; /* Remove o espaçamento interno padrão da lista */
+}
+
+.categoria ul li {
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    padding-left: 20px; /* Adiciona um recuo aos itens da lista */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content h2 {
+    color: #333; /* Cor do título */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    color: #666; /* Cor do texto */
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+.atualizacao {
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    padding: 20px; 
+    margin: 20px auto; 
+}
+.atualizacao h2 {
+    color: #333; 
+    font-size: 24px; 
+    margin-bottom: 15px; 
+    text-align: center; 
+}
+.atualizacao p {
+    color: #666; 
+    font-size: 16px; 
+    line-height: 1.6; 
+    margin-bottom: 15px; 
+    text-align: justify; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*rodape*/
+
+footer {
+    background-color: #008eaa;
+    padding: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-column h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-column ul li a i {
+    margin-right: 5px;
+}
+
+/* responsividade */
+@media screen and (max-width: 768px) {
+    .logo img {
+        height: 40px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+    }
+
+    .search-bar button {
+        padding: 8px;
+    }
+
+    .menu ul li {
+        font-size: 14px;
+    }
+
+    .user-actions a {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 

@@ -1,0 +1,326 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+/*incicio do cabecalho*/
+header {
+    background-color:  #008eaa;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 90px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.user-actions a,
+.social-icons a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+
+.social-icons a {
+    margin-left: 10px;
+}
+.drug{
+    height: 100%;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu ul li {
+    margin-right: 20px;
+}
+
+.menu ul li:last-child {
+    margin-right: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px;
+}
+
+.user-actions a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+about-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.about-content h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    color: blanchedalmond;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-left: 20px; /* Espaçamento entre a imagem e o texto */
+}
+
+.drug {
+    width: 45%;
+    height: auto;
+}
+
+.bem-estar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bem-estar .compri {
+    width: 45%; /
+    height: auto;
+    margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+}
+
+.bem-estar .texto {
+    max-width: 600px;
+}
+
+.bem-estar .texto h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+.bem-estar .texto h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.bem-estar .texto p {
+    font-size: 18px;
+    color: blanchedalmond;
+}
+
+/* banner*/
+
+/*  contêiner principal */
+
+#principal {
+    margin-bottom: 5px; /* Adiciona apenas margem inferior */
+    border: 1px solid #fff; /* Borda permanece a mesma */
+}
+
+.first {
+    background: #DCDCDC ; 
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.first h1 {
+    font-size: 1.5rem;
+    color: #333; /* Cor do texto */
+    margin-bottom: 10px;
+}
+
+.first p {
+    font-size: 1rem;
+    color: #666; /* Cor do texto */
+    line-height: 1.5;
+    max-width: 355px;
+}
+
+
+
+
+/**/
+
+
+
+
+
+
+
+.medicamentos {
+    display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas com largura igual */
+  gap: 20px; /* Espaçamento entre as colunas */
+/*
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;*/
+}
+
+
+.medicamento {
+    background-color: #fff;
+    width: 180px;
+    height: 260px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px #aaaa;
+}
+
+.medicamento div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    height: 50%;
+}
+
+.medicamento h1{
+    font-size: 1.2rem;
+    
+}
+
+.medicamento h2{
+    font-size: .9rem;
+    color: #aaa;
+    
+}
+
+
+
+.img {
+    width: 170px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+
+
+
+
+
+
+.atualizacao {
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    padding: 20px; 
+    margin: 20px auto; 
+}
+.atualizacao h2 {
+    color: #333; 
+    font-size: 24px; 
+    margin-bottom: 15px; 
+    text-align: center; 
+}
+.atualizacao p {
+    color: #666; 
+    font-size: 16px; 
+    line-height: 1.6; 
+    margin-bottom: 15px; 
+    text-align: justify; 
+}
+
+
+
+/* fim banner*/
+
+/*rodape*/
+
+
+footer {
+    background-color: #008eaa;
+    padding: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-column h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-column ul li a i {
+    margin-right: 5px;
+}
+
+/* responsividade */
+@media screen and (max-width: 768px) {
+    .logo img {
+        height: 40px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+    }
+
+    .search-bar button {
+        padding: 8px;
+    }
+
+    .menu ul li {
+        font-size: 14px;
+    }
+
+    .user-actions a {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 
